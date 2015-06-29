@@ -1,0 +1,71 @@
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user-info div.profile-pic {
+  margin: 20px 0;
+}
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user-info div.profile-pic img {
+  width: 150px;
+}
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user-info div.profile-name h4 {
+  margin: 0;
+  padding: 0 15px 10px;
+  color: #777777;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category {
+  border: 1px solid #DDDDDD;
+  border-radius: 2px;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li {
+  background-color: #fff;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li a {
+  color: #474747;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li:first-child a {
+  border-radius: 2px 0 0 2px;
+  border-right: 1px solid #ddd;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li:nth-child( 2 ) a {
+  border-radius: 0;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li:last-child a {
+  border-radius: 0 2px 2px 0;
+  border-left: 1px solid #ddd;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li.active,
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li:hover {
+  border-bottom: 2px solid #43609c;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li.active a,
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category li:hover a {
+  background-color: #f3f3f3;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.table-settings {
+  margin-top: 30px;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.tab-content {
+  min-height: 600px;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.expenses div.form-expenses form div.row div div div.expense-content {
+  margin-top: 50px;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.expenses div.form-expenses form div.row div.purpose div div.input-purpose button {
+  border-radius: 50%;
+  padding: 7px 12px;
+}
+body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.row div.product-description dl dt {
+  width: 105px;
+  text-align: left;
+}
+body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.row div.product-description dl dd {
+  margin-left: 113px;
+}
+body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.row div.product-description dl dd.description {
+  text-align: justify;
+}
+/* Custom CSS */
+.tab-container .panel .panel-heading h4 {
+  margin: 0;
+  /*color: @cgray;*/
+}
+.inline-block {
+  display: inline-block;
+}

@@ -1,0 +1,47 @@
+@gray: #484848;
+
+@import url('styles.css') screen;
+
+html,body {
+	background-color: #ffffff;
+}
+
+body {
+	section#main-container {
+		div.row {
+			div.login-form {
+				div.logo {
+					margin-top: 20%;
+					margin-bottom: 10%;
+
+					img {
+						width: 150px;
+					}
+				}
+				div.login-panel {
+					border: none;
+
+					div.panel-heading {
+						background: none;
+						border: none;
+
+						h3.panel-title {
+							color: @gray;
+						}
+					}
+					div.panel-body {
+						form {
+							fieldset {
+								div.form-group {
+									input {
+										text-align: center;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
