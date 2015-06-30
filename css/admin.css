@@ -1,3 +1,12 @@
+@font-face {
+  font-family: open-sans;
+  src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+html,
+body {
+  background-color: #fff;
+  font-family: open-sans, helvetica, Arial, sans-serif;
+}
 body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user-info div.profile-pic {
   margin: 20px 0;
 }
@@ -8,6 +17,16 @@ body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user
   margin: 0;
   padding: 0 15px 10px;
   color: #777777;
+}
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user-info div.profile-name h4 span {
+  color: #333;
+  font-weight: bold;
+}
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li a {
+  color: #333;
+}
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper {
+  width: 85%;
 }
 body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.content ul.inventory-category {
   border: 1px solid #DDDDDD;
@@ -64,6 +83,10 @@ body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.
 body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.row div.product-description dl dd.description {
   text-align: justify;
 }
+.table-action tr td a span {
+  padding: 5px 10px;
+  display: inline-block;
+}
 /* Custom CSS */
 .tab-container .panel .panel-heading h4 {
   margin: 0;
@@ -77,4 +100,7 @@ a {
 }
 a label.label {
   cursor: pointer;
+}
+.navbar-default {
+  background-color: #fff;
 }

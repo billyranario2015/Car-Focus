@@ -1,5 +1,12 @@
 @cgray: #777;
-
+@font-face {
+    font-family: open-sans;
+    src: url('../fonts/OpenSans-Regular.ttf')  format('truetype');
+}
+html,body {
+	background-color: #fff;
+	font-family: open-sans, helvetica, Arial, sans-serif;
+}
 body {
 	div#wrapper {
 		nav.navbar	{
@@ -21,8 +28,16 @@ body {
 										margin: 0;
 										padding: 0 15px 10px;
 										color: @cgray;
+
+										span {
+											color: #333;
+											font-weight: bold;
+										}
 									}
 								}
+							}
+							a {
+								color: #333;
 							}
 						}
 					}
@@ -33,6 +48,8 @@ body {
 			div.container-fluid {
 				div.row {
 					div.main-wrapper {
+						width: 85%;
+
 						div.row {
 							div {
 								div.content {
@@ -153,7 +170,18 @@ body {
 		}
 	}
 }
-
+.table-action {
+	tr {
+		td  {
+			a {
+				span {
+					padding: 5px 10px;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
 /* Custom CSS */
 .tab-container {
 	.panel {
@@ -176,4 +204,6 @@ a {
 		cursor: pointer;
 	}
 }
-
+.navbar-default {
+	background-color: #fff;
+}
