@@ -51,6 +51,9 @@ body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper d
   border-radius: 50%;
   padding: 7px 12px;
 }
+body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper div.row div div.panel div.panel-body div.form-info div.form-categories {
+  margin-top: 30px;
+}
 body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.row div.product-description dl dt {
   width: 105px;
   text-align: left;
@@ -68,4 +71,10 @@ body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.
 }
 .inline-block {
   display: inline-block;
+}
+a {
+  text-decoration: none !important;
+}
+a label.label {
+  cursor: pointer;
 }

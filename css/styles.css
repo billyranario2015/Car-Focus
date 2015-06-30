@@ -17,10 +17,16 @@ body {
 .remove-padding-right {
   padding-right: 0 !important;
 }
+.remove-margin {
+  margin: 0;
+}
 .space-separator {
   width: 100%;
   margin-top: 15px;
 }
 .overflow {
   overflow: hidden;
+}
+.margin-btm-md {
+  margin-bottom: 20px;
 }

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>    
+    <title>Car Focus - Admin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/metisMenu.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sb-admin-2.css">
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    CAR FOCUS
+                </a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    Welcome, Billy Joel
+                    <span class="text-primary"></span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                           <div class="user-info">  
+                               <div class="profile-pic text-center">
+                                   <img src="img/user.jpg" class="img-circle float">
+                               </div>
+                               <div class="profile-name text-center">
+                                   <h4>Hello, <span class="text-primary">Billy Joel</span></h4>
+                               </div>
+                           </div>
+                        </li>
+                        <li>
+                            <a href="0-dashboard.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</i></a>
+                        </li>
+                        <li class="active">
+                            <a href="index.html" class="active"><i class="fa fa-dropbox fa-fw"></i> Inventory<i class="fa arrow"></i></a>
+                             <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="3-b-inventory.html">View Items</a>
+                                </li>
+                                <li>
+                                    <a href="3-a-inventory-inputs.html">Add Items</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-money  fa-fw"></i> Expenses<i class="fa arrow"></i></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="4-a-expenses.html">Add Expenses</a>
+                                </li>
+                                <li>
+                                    <a href="4-b-expenses.html">View Expenses</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-calculator  fa-fw"></i> Estimations<i class="fa arrow"></i></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="5-a-estamation-add.html">Add Estimations</a>
+                                </li>
+                                <li>
+                                    <a href="5-b-estamation-history.html">View Estimations</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="main-wrapper col-lg-12">
+                        <h1 class="page-header">Inventory</h1>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="content">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-pills nav-justified inventory-category" role="tablist">
+                                        <li role="presentation"><a href="#on-stock" aria-controls="on-stock" role="tab" data-toggle="tab">On Stock</a></li>
+                                        <li role="presentation" class="active"><a href="#direct-purchase" aria-controls="direct-purchase" role="tab" data-toggle="tab">Direct Purchase</a></li>
+                                        <li role="presentation"><a href="#product-order" aria-controls="product-order" role="tab" data-toggle="tab">Product Order</a></li>
+                                    </ul>
+                                    <!-- Search -->
+                                    <div class="row table-settings">
+<!--                                         <div class="col-md-5 view-option">
+                                            <form class="form-inline">
+                                                <label>View by: </label>
+                                                <div class="form-group">
+                                                    <select class="form-control" id="day">
+                                                        <option value="" selected>Day</option>
+                                                    </select>
+                                                </div>  
+                                                <div class="form-group">
+                                                    <select class="form-control" id="month">
+                                                        <option value="" selected>Month</option>
+                                                        <option value="January">January</option>
+                                                        <option value="February">February</option>
+                                                        <option value="March">March</option>
+                                                        <option value="April">April</option>
+                                                        <option value="May">May</option>
+                                                        <option value="June">June</option>
+                                                        <option value="July">July</option>
+                                                        <option value="August">August</option>
+                                                        <option value="September">September</option>
+                                                        <option value="October">October</option>
+                                                        <option value="November">November</option>
+                                                        <option value="December">December</option>
+                                                    </select>
+                                                </div>  
+                                                <div class="form-group">
+                                                    <select class="form-control" id="year">
+                                                    </select>
+                                                </div>  
+                                            </form>
+                                        </div> -->
+                                    </div>
+                                    <!-- end: Search -->
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane" id="on-stock">
+                                            <div class="tab-container">
+                                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-on-stock" role="grid" aria-describedby="dataTables-on-stock_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" aria-sort="ascending" style="width: 170px;">Product Name</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 85px;">Quantity</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 110px;">Price</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 108px;">Date</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 108px;">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane active" id="direct-purchase">
+                                            <div class="tab-container">
+                                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-direct-purchase" role="grid" aria-describedby="dataTables-direct-purchase_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="dataTables-direct-purchase" rowspan="1" colspan="1" aria-sort="ascending" style="width: 170px;">Product Name</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-direct-purchase" rowspan="1" colspan="1" style="width: 85px;">Quantity</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-direct-purchase" rowspan="1" colspan="1" style="width: 110px;">Price</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-direct-purchase" rowspan="1" colspan="1" style="width: 147px;">Store</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-direct-purchase" rowspan="1" colspan="1" style="width: 108px;">Date</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-direct-purchase" rowspan="1" colspan="1" style="width: 108px;">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="product-order">
+                                            <div class="tab-container">
+                                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-product-order" role="grid" aria-describedby="dataTables-product-order_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="dataTables-product-order" rowspan="1" colspan="1" aria-sort="ascending" style="width: 170px;">Product Name</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-product-order" rowspan="1" colspan="1" style="width: 85px;">Quantity</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-product-order" rowspan="1" colspan="1" style="width: 110px;">Price</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-product-order" rowspan="1" colspan="1" style="width: 147px;">Store</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-product-order" rowspan="1" colspan="1" style="width: 108px;">Date</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="dataTables-product-order" rowspan="1" colspan="1" style="width: 108px;">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+
+                                                         <tr class="gradeA odd" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 1
+                                                                </a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td>Php 12.00</td>
+                                                            <td class="center">Store 1</td>
+                                                            <td class="center">June 20, 2015</td>
+                                                            <td class="center">Php 24.00</td>
+                                                         </tr>
+
+                                                         <tr class="gradeA even" role="row">
+                                                            <td class="sorting_1">
+                                                                <a href="#" data-toggle="modal" data-target="#productModalInfo">
+                                                                    Product 2
+                                                                </a>
+                                                            </td>
+                                                            <td>12</td>
+                                                            <td>Php 43.00</td>
+                                                            <td class="center">Store 2</td>
+                                                            <td class="center">June 12, 2015</td>
+                                                            <td class="center">Php 516.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+
+
+    <!-- Modal for product info -->
+    <div class="modal fade" id="productModalInfo" tabindex="-1" role="dialog" aria-labelledby="productModalInfoLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="productModalInfoLabel">Product Transaction Detail</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 product-description">
+                            <dl class="dl-horizontal">
+                                <dt>Transaction ID:</dt>
+                                <dd class="text-primary">201506201003</dd>
+                                <dt>Product Name:</dt>
+                                <dd>Gasket</dd>
+                                <dt>Quantity:</dt>
+                                <dd>2</dd>
+                                <dt>Price:</dt>
+                                <dd>Php 12.00</dd>
+                        </div>
+                        <div class="col-md-6 product-description">
+                            <dl class="dl-horizontal">
+                                <dt>Store:</dt>
+                                <dd>Kakings</dd>
+                                <dt>Date:</dt>
+                                <dd>June 20, 2015 1:23 pm</dd>
+                                <dt>Buyer:</dt>
+                                <dd>Ms. Jocelyn dela Cruz</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-12 description">
+                            <label>Description</label>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end: Modal -->
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/metisMenu.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap.min.js"></script>
+    <script src="js/sb-admin-2.js"></script>
+    <script type="text/javascript">
+    $( document ).ready( function() {
+        var date = new Date();
+        var days = 0,months,year = 0;
+        for( days = 1 ; days <= 31 ; days++ ) {
+            $( "select#day" ).append( '<option value="' + days + '">' + days + '</option>' );
+        }
+                                                               
+        for( year = 1970; year <= date.getFullYear(); year++ ) {
+            $( "select#year" ).prepend( '<option value="' + year + '">' + year + '</option>' );
+        }
+        $( "select#year" ).prepend( ' <option value="" selected>Year</option>' );
+        
+        $('#dataTables-on-stock').DataTable({
+                responsive: true
+        } );
+        $('#dataTables-direct-purchase').DataTable({
+                responsive: true
+        } );
+        $('#dataTables-product-order').DataTable({
+                responsive: true
+        } );
+
+    } );
+    </script>
+</body>
+</html>
