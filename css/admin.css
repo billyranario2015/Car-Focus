@@ -7,6 +7,9 @@ body {
   background-color: #fff;
   font-family: open-sans, helvetica, Arial, sans-serif;
 }
+body div#wrapper {
+  background-color: #262B2D;
+}
 body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user-info div.profile-pic {
   margin: 20px 0;
 }
@@ -16,14 +19,23 @@ body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user
 body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user-info div.profile-name h4 {
   margin: 0;
   padding: 0 15px 10px;
-  color: #777777;
+  color: #f8f8f8;
 }
 body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li div.user-info div.profile-name h4 span {
-  color: #333;
+  color: #CBCBCB;
   font-weight: bold;
 }
 body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li a {
-  color: #333;
+  color: #f8f8f8;
+}
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li a:hover,
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li a:focus {
+  background-color: #212124;
+}
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li.active > a,
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li.active > a:hover,
+body div#wrapper nav.navbar div.sidebar div.sidebar-nav ul#side-menu li.active > a:focus {
+  background-color: #212124;
 }
 body div#wrapper div#page-wrapper div.container-fluid div.row div.main-wrapper {
   width: 85%;
@@ -83,6 +95,12 @@ body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.
 body div#productModalInfo div.modal-dialog div.modal-content div.modal-body div.row div.product-description dl dd.description {
   text-align: justify;
 }
+.view-summary {
+  margin-bottom: 30px;
+}
+.sidebar ul li a.active {
+  background-color: #212124 !important;
+}
 .table-action tr td a span {
   padding: 5px 10px;
   display: inline-block;
@@ -102,5 +120,9 @@ a label.label {
   cursor: pointer;
 }
 .navbar-default {
-  background-color: #fff;
+  background-color: #262B2D;
+  color: #f8f8f8;
+}
+.navbar-default .navbar-brand {
+  color: #f8f8f8;
 }

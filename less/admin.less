@@ -9,6 +9,8 @@ html,body {
 }
 body {
 	div#wrapper {
+		background-color: #262B2D;
+
 		nav.navbar	{
 			div.sidebar {
 				div.sidebar-nav {
@@ -27,17 +29,25 @@ body {
 									h4 {
 										margin: 0;
 										padding: 0 15px 10px;
-										color: @cgray;
+										color: #f8f8f8;
 
 										span {
-											color: #333;
+											color: #CBCBCB;
 											font-weight: bold;
 										}
 									}
 								}
 							}
 							a {
-								color: #333;
+								color: #f8f8f8;
+							}
+							a:hover , a:focus {
+								background-color: #212124;
+							}
+						}
+						li.active {
+							> a , > a:hover , > a:focus {
+								background-color: #212124;
 							}
 						}
 					}
@@ -170,6 +180,12 @@ body {
 		}
 	}
 }
+.view-summary {
+	margin-bottom: 30px;
+}
+.sidebar ul li a.active {
+	background-color: #212124 !important;
+}
 .table-action {
 	tr {
 		td  {
@@ -205,5 +221,9 @@ a {
 	}
 }
 .navbar-default {
-	background-color: #fff;
+	background-color: #262B2D;
+	color: #f8f8f8;
+}
+.navbar-default .navbar-brand {
+	color: #f8f8f8;
 }

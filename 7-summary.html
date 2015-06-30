@@ -86,8 +86,8 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li class="active">
-                            <a href="index.html" class="active"><i class="fa fa-money  fa-fw"></i> Expenses<i class="fa arrow"></i></a>
+                        <li>
+                            <a href="index.html"><i class="fa fa-money  fa-fw"></i> Expenses<i class="fa arrow"></i></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="4-a-expenses.html">Add Expenses</a>
@@ -110,6 +110,15 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li class="active">
+                            <a href="index.html"><i class="fa fa-file-text-o fa-fw"></i> Summary<i class="fa arrow"></i></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="5-a-estamation-add.html">View Summary</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -122,46 +131,71 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="main-wrapper col-lg-12">
-                        <h1 class="page-header">Expenses</h1>
+                        <h1 class="page-header">View Summary</h1>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="content estimation">
-                                    <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-expenses" role="grid" aria-describedby="dataTables-on-stock_info">
-                                        <thead>
-                                            <tr role="row">
-                                                <th class="sorting_asc" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" aria-sort="ascending" style="width: 170px;">Employee</th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 85px;">Cash Borrowed</th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 110px;">Borrowed From</th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 108px;">Purpose</th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 148px;">Amount</th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTables-on-stock" rowspan="1" colspan="1" style="width: 108px;">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="table-action">
-                                            <tr class="gradeA odd" role="row">
-                                                <td class="sorting_1">Juan dela Cerna</td>
-                                                <td>2000</td>
-                                                <td>Owner Name</td>
-                                                <td class="center">Masking Tape</td>
-                                                <td class="center">200</td>
-                                                <td>
-                                                    <a href="#"><span class="label label-primary"> Edit</span></a>
-                                                    <a href="#"><span class="label label-danger"> Trash</span></a>
-                                                </td>
-                                             </tr>
-                                             <tr class="gradeA even" role="row">
-                                                <td class="sorting_1">Juan dela Cerna</td>
-                                                <td>2000</td>
-                                                <td>Owner Name</td>
-                                                <td class="center">Masking Tape</td>
-                                                <td class="center">200</td>
-                                                <td>
-                                                    <a href="#"><span class="label label-primary"> Edit</span></a>
-                                                    <a href="#"><span class="label label-danger"> Trash</span></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="content summary">
+                                    <div class="col-md-12 form-wrapper">
+                                       <div class="summary-fields">
+                                            <div class="row form-group view-summary">
+                                                <div class="col-md-4">
+                                                    <p>Get summary report by:</p>
+                                                    <select class="form-control" id="summary-category">
+                                                        <option value="daily">Daily</option>
+                                                        <option value="monthly">Monthly</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 col-md-offset-2 text-right ">
+                                                    <p>Click to download Summary Report:</p>
+                                                    <button class="btn btn-default"><i class="fa fa-download"></i> Download Summary</button>
+                                                </div>
+                                            </div>
+                                            <div class="item-list view summary-daily">
+                                                <table class="table table-hover table-condense table-bordered" id="dataTables-summary-daily">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="type">Date</th>
+                                                            <th>Expenses</th>
+                                                            <th>Receivables</th>
+                                                            <th>Payables</th>
+                                                            <th>Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>June 25, 2015</td>
+                                                            <td>dassada</td>
+                                                            <td>213</td>
+                                                            <td>2000</td>
+                                                            <td>4500</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="item-list view summary-monthly" hidden>
+                                                <table class="table table-hover table-condense table-bordered" id="dataTables-summary-monthly">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Monthly</th>
+                                                            <th>Expenses</th>
+                                                            <th>Receivables</th>
+                                                            <th>Payables</th>
+                                                            <th>Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>January</td>
+                                                            <td>dassada</td>
+                                                            <td>213</td>
+                                                            <td>2000</td>
+                                                            <td>4500</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                       </div>
+                                   </div>
                                 </div>
                             </div>
                         </div>
@@ -187,9 +221,30 @@
     <script src="js/sb-admin-2.js"></script>
     <script type="text/javascript">
     $( document ).ready( function() {
-        $('#dataTables-expenses').DataTable({
-                responsive: true
+        
+        $( "#summary-category" ).change(function () {
+            var status = "";
+            
+            $( "select option:selected" ).each(function() {
+              status += $( this ).val();
+            });
+            console.log( status )
+            
+            if ( status === 'daily' ) {
+                $( '.view' ).css( 'display','none' );
+                $( '.summary-' + status ).show();
+            } else if( status === 'monthly' ){
+                $( '.view' ).css( 'display','none' );
+                $( '.summary-' + status ).show();
+            }           
+
         } );
+        // $('#dataTables-summary-daily').DataTable({
+        //         responsive: true
+        // } );
+        // $('#dataTables-summary-monthly').DataTable({
+        //         responsive: true
+        // } );
     } )
     </script>
 </body>
